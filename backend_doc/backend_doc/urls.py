@@ -17,13 +17,22 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     # path('api/', include('base.urls'))
+    # path('',TemplateView.as_view(template_name="index.html")),
+    path("api/hospital_fee/", include('base.urls.hospital_fee_url')),
+    path("api/disease/", include('base.urls.disease_urls')),
+    path("api/clinics/", include('base.urls.clinic_urls')),
+    path("api/labs/", include('base.urls.lab_urls')),
+    path("api/hospitals/", include('base.urls.hospital_urls')),
     path("api/products/", include('base.urls.product_urls')),
     path("api/product/", include('base.urls.product_urls')),
     path("api/users/", include('base.urls.user_urls')),
-    path("api/orders/", include('base.urls.order_urls')),
+    # path("api/orders/", include('base.urls.order_urls')),
+
 ]
 urlpatterns+= static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+urlpatterns+= static(settings.STATIC_URL,document_root = settings.STATIC_ROOT)

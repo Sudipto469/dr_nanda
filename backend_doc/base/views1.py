@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Product
-from .serializer import ProductSerializer,UserSerializersWithToken , UserSerializer
+from .serializer1 import ProductSerializer,UserSerializersWithToken , UserSerializer
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser

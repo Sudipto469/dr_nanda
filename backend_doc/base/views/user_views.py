@@ -6,7 +6,8 @@ from rest_framework.response import Response
 # from ..products import products
 from django.contrib.auth.models import User
 from ..models import Product
-from ..serializer import ProductSerializer, UserSerializer , UserSerializersWithToken
+# from ..serializer import ProductSerializer, UserSerializer , UserSerializersWithToken
+from ..serializers.productSerializer import ProductSerializer,UserSerializer,UserSerializersWithToken
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth.hashers import make_password
